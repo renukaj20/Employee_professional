@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.eniquesolutions.com/EMPLOYEEDETAILS/AbstractW" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EMPLOYEEDETAILS" targetNamespace="http://www.eniquesolutions.com/EMPLOYEEDETAILS/AbstractW" xmlns:xsd1="http://www.example.org/emp_professional" xmlns:xsd2="http://www.eniquesolutions/faultSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.eniquesolutions.com/EMPLOYEEDETAILS/AbstractW">
+      <xsd:element name="NewOperation">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="in" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="NewOperationResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="out" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+    <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    	<xsd:import namespace="http://www.example.org/emp_professional"
+    		schemaLocation="../Schemas/emp_professional.xsd">
+    	</xsd:import>
+    	<xsd:import namespace="http://www.eniquesolutions/faultSchema"
+    		schemaLocation="../Schemas/faultSchema.xsd">
+    	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="InsertEmployeeProfessionalDataRequest">
+    <wsdl:part name="parameters" type="xsd1:EmployeeProfessionalReqType"/>
+  </wsdl:message>
+  <wsdl:message name="InsertEmployeeProfessionalDataResponse">
+    <wsdl:part name="parameters" type="xsd1:EmployeeProfessionalRespType"/>
+  </wsdl:message>
+  <wsdl:message name="NewOperation1Request">
+  	<wsdl:part name="NewOperation1Request" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperation1Response">
+  	<wsdl:part name="NewOperation1Response" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InsertEmployeeProfessionalDataFault">
+  	<wsdl:part name="fault" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InsertEmployeeProfessionalDataFault1">
+  	<wsdl:part name="fault" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InsertEmployeeProfessionalDataFault2">
+  	<wsdl:part name="fault" element="xsd2:fault"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperationRequest">
+  	<wsdl:part name="NewOperationRequest" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="NewOperationResponse">
+  	<wsdl:part name="NewOperationResponse" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="EMPLOYEEDETAILS">
+    <wsdl:operation name="InsertEmployeeProfessionalData">
+      <wsdl:input message="tns:InsertEmployeeProfessionalDataRequest"/>
+      <wsdl:output message="tns:InsertEmployeeProfessionalDataResponse"/>
+            <wsdl:fault name="fault" message="tns:InsertEmployeeProfessionalDataFault2"></wsdl:fault>
+        </wsdl:operation>
+
+  </wsdl:portType>
+  <wsdl:binding name="EMPLOYEEDETAILSSOAP" type="tns:EMPLOYEEDETAILS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="InsertEmployeeProfessionalData">
+      <soap:operation soapAction="http://www.eniquesolutions.com/EMPLOYEEDETAILS/AbstractW/NewOperation"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EMPLOYEEDETAILS">
+    <wsdl:port binding="tns:EMPLOYEEDETAILSSOAP" name="EMPLOYEEDETAILSSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

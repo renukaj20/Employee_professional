@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/emp_professional" xmlns:tns="http://www.example.org/emp_professional" elementFormDefault="qualified">
+
+    <complexType name="EmployeeProfessionaldetailsType">
+    	<sequence>
+    		<element name="Empid" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Firstname" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Lastname" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Emailid" maxOccurs="1" minOccurs="0" type="string">
+    		</element>
+    		<element name="Date_of_joining" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Designation" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="phonenumber" maxOccurs="1" minOccurs="0" type="string">
+    		</element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="EmployeeProfessionalDetailsReq"
+    	type="tns:EmployeeProfessionalReqType">
+    </element>
+    
+
+
+    <complexType name="EmployeeProfessionalReqType">
+    	<sequence>
+    		<element name="EmpProfessional"
+    			type="tns:EmployeeProfessionaldetailsType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="EmployeeProfessionalRespType">
+    	<sequence>
+    		<element name="Responsemsg" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="EmployeeProfessionDetailsResp"
+    	type="tns:EmployeeProfessionalRespType">
+    </element>
+</schema>

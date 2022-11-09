@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AbstractW="http://www.eniquesolutions.com/EMPLOYEEDETAILS/AbstractW" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:EmployeeDetailsFile="http://www.eniquesolutions.com/EmployeeDetailsFile/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:emp_professional="http://www.example.org/emp_professional" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_RyU7sE6rEe22OpFhJ58Feg" targetNamespace="http://tns.tibco.com/bw/composite/emp_professional" name="emp_professional" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_I55Qsk7SEe289LYTYga4Tw" name="EMPLOYEEDETAILS" promote="ComponentInsertEmplyeeProfessionalDeatils/EMPLOYEEDETAILS">
+    <sca:interface.wsdl xmi:id="_I55Qtk7SEe289LYTYga4Tw" interface="http://www.eniquesolutions.com/EMPLOYEEDETAILS/AbstractW#wsdl.interface(EMPLOYEEDETAILS)" scaext:wsdlLocation="../../Common/Service%20Descriptors/EMPLOYEEDETAILS.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_PFwWAE7SEe289LYTYga4Tw" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/2524fb5f5a1a412dafc177e1ea2b5901/SOAPServiceBinding" portTypeQName="AbstractW:EMPLOYEEDETAILS" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/Common/Service%20Descriptors/EMPLOYEEDETAILS.wsdl">
+      <bindingType xmi:id="_PFwWAU7SEe289LYTYga4Tw"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_FmYpEFzqEe2VqNMNA41jJA" endpointURI="/SOAPServiceBinding/eMPLOYEEDETAILS/" httpConnector="HTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_PFwWAk7SEe289LYTYga4Tw" operationName="InsertEmployeeProfessionalData" action="InsertEmployeeProfessionalData" actionNeeded="true">
+        <bindingType xmi:id="_PFwWA07SEe289LYTYga4Tw"/>
+        <messageConfiguration xmi:id="_PFwWBE7SEe289LYTYga4Tw" messageQName="AbstractW:InsertEmployeeProfessionalDataRequest" wsdlLocation="platform:/resource/Common/Service%20Descriptors/EMPLOYEEDETAILS.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_PFwWBU7SEe289LYTYga4Tw" partName="parameters" partTypeName="emp_professional:EmployeeProfessionalReqType"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_PFwWBk7SEe289LYTYga4Tw" messageQName="AbstractW:InsertEmployeeProfessionalDataResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/Common/Service%20Descriptors/EMPLOYEEDETAILS.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_PFwWB07SEe289LYTYga4Tw" partName="parameters" partTypeName="emp_professional:EmployeeProfessionalRespType"/>
+        </messageConfiguration>
+        <context xmi:id="_PFwWCE7SEe289LYTYga4Tw">
+          <inputMapping xmi:id="_PFwWCU7SEe289LYTYga4Tw"/>
+          <outputMapping xmi:id="_PFwWCk7SEe289LYTYga4Tw" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_PFwWC07SEe289LYTYga4Tw" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_TPjusE6rEe22OpFhJ58Feg" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TP2poE6rEe22OpFhJ58Feg" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TP2poU6rEe22OpFhJ58Feg" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TQAaoE6rEe22OpFhJ58Feg" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TQAaoU6rEe22OpFhJ58Feg" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TQJkkE6rEe22OpFhJ58Feg" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TQJkkU6rEe22OpFhJ58Feg" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TQTVkE6rEe22OpFhJ58Feg" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_TQdGkE6rEe22OpFhJ58Feg" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_CH1uEE7SEe289LYTYga4Tw" name="ComponentInsertEmplyeeProfessionalDeatils" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_CH1uEU7SEe289LYTYga4Tw" processName="emp_professional.InsertEmplyeeProfessionalDeatils"/>
+    <sca:service xmi:id="_I55QsE7SEe289LYTYga4Tw" name="EMPLOYEEDETAILS">
+      <sca:interface.wsdl xmi:id="_I55QsU7SEe289LYTYga4Tw" interface="http://www.eniquesolutions.com/EMPLOYEEDETAILS/AbstractW#wsdl.interface(EMPLOYEEDETAILS)" scaext:wsdlLocation="../../Common/Service%20Descriptors/EMPLOYEEDETAILS.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

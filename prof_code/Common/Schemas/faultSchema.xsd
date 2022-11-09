@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema targetNamespace="http://www.eniquesolutions/faultSchema" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.eniquesolutions/faultSchema">
+
+    <complexType name="faultType">
+    	<sequence>
+    		<element name="Errormsg" type="string"></element>
+    		<element name="Errorcode" type="string"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="fault" type="tns:faultType"></element>
+</schema>

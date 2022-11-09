@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/emp_personal" elementFormDefault="qualified" targetNamespace="http://www.example.org/emp_personal">
+        
+  
+  <complexType name="employeeType">
+            	
+    
+    <sequence>
+          	
+      <element maxOccurs="1" minOccurs="1" name="empid" type="string">
+    	</element>
+          	
+      <element maxOccurs="1" minOccurs="0" name="empname" type="string"/>
+          	
+      <element maxOccurs="1" minOccurs="0" name="age" type="string"/>
+          	
+      <element maxOccurs="1" minOccurs="0" name="address" type="string"/>
+          	
+      <element maxOccurs="1" minOccurs="0" name="date_of_birth" type="string"/>
+          	
+      <element maxOccurs="1" minOccurs="0" name="phonenumber" type="string"/>
+          	
+      <element name="Resposemsg" type="string"/>
+          
+    </sequence>
+      
+  </complexType>
+        
+    
+  
+  <element name="employeeprsnlReq" type="tns:employeeprnslReqType"/>
+    
+  <complexType name="employeeprsnlRespType">
+      	
+    <sequence>
+        		
+      <element maxOccurs="unbounded" minOccurs="0" name="prsnldata" type="tns:employeeType"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <complexType name="employeeprnslReqType">
+      	
+    <sequence>
+        		
+      <element maxOccurs="unbounded" minOccurs="0" name="prsnldata" type="tns:employeeType"/>
+        	
+    </sequence>
+      
+  </complexType>
+    
+  <element name="employeeprsnlResp" type="tns:employeeprsnlRespType"/>
+      
+  <complexType name="EmpAddressDetailsType">
+        
+    <sequence>
+          	
+      <element name="BuildingNo" type="string"/>
+          	
+      <element name="PlotNo" type="string"/>
+          	
+      <element name="Street" type="string"/>
+          	
+      <element name="City" type="string"/>
+          	
+      <element name="District" type="string"/>
+          	
+      <element name="State" type="string"/>
+          	
+      <element name="PinCode" type="string"/>
+          
+    </sequence>
+        
+  </complexType>
+      
+  <element name="EmpAddressDetails" type="tns:EmpAddressDetailsType">
+    </element>
+      
+  <complexType name="employeeRespType">
+        	
+    <sequence>
+          		
+      <element name="Responsemsg" type="string"/>
+          	
+    </sequence>
+        
+  </complexType>
+      
+  <element name="employeeResp" type="tns:employeeRespType"/>
+      
+  <complexType name="employeesalaryType">
+        	
+    <sequence>
+          		
+      <element name="EmpId" type="string"/>
+          		
+      <element name="Salary">
+            			
+        <simpleType>
+              				
+          <restriction base="string">
+                					
+            <minLength value="10000"/>
+                					
+            <maxLength value="10000000"/>
+                				
+          </restriction>
+              			
+        </simpleType>
+            		
+      </element>
+          	
+    </sequence>
+        
+  </complexType>
+      
+  <element name="employeesalary" type="tns:employeesalaryType"/>
+      
+  <complexType name="Emp_insurance_detailsType">
+        	
+    <sequence>
+          		
+      <element name="EMPID" type="string"/>
+          		
+      <element name="EMPNAME" type="string"/>
+          		
+      <element name="INSURANCE_NAME" type="string"/>
+          		
+      <element name="BENEFITS" type="string"/>
+          	
+    </sequence>
+        
+  </complexType>
+      
+  <element name="Emp_insurance_details" type="tns:Emp_insurance_detailsType">
+    </element>
+        <complexType name="EmployeeProfessionaldetailsType">
+    	<sequence>
+    		<element name="Empid" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="Firstname" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Lastname" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="Emailid" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="Date_of_joining" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="Designation" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="phonenumber" type="string" maxOccurs="1" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="EmployeeProfessionalDetailsReq"
+    	type="tns:EmployeeProfessionalReqType">
+    </element>
+    
+
+
+    <complexType name="EmployeeProfessionalReqType">
+    	<sequence>
+    		<element name="EmpProfessional"
+    			type="tns:EmployeeProfessionaldetailsType" maxOccurs="unbounded" minOccurs="0">
+    		</element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="EmployeeProfessionalRespType">
+    	<sequence>
+    		<element name="Responsemsg" type="string"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="EmployeeProfessionDetailsResp"
+    	type="tns:EmployeeProfessionalRespType">
+    </element>
+      
+  
+</schema>
